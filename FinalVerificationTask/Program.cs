@@ -42,4 +42,31 @@ string[] ModifiedArray(string[] inputArray)
     return outArray;
 }
 
+// метод для печати одномерного массива строк
+void PrintIntArray(string[] printArray)
+{
+    // проверка наличия элементов в массиве
+    if (printArray.Length == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Элементы отсутвуют!");
+        Console.WriteLine();
+        Console.ResetColor();
+    }
+    else
+    {
+        int i = 0;
+        Console.Write("[");
+        while (i < printArray.Length - 1)
+        {
+            Console.Write('\u0022' + printArray[i] + '\u0022' + ", ");
+            i++;
+        }
+        // убираем запятую после последнего элемента
+        Console.WriteLine('\u0022' + printArray[i] + '\u0022'+"]");
+        Console.WriteLine();
+    }
+}
+
+
 

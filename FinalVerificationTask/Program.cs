@@ -1,4 +1,10 @@
-﻿// метод для формирования массива из введенных с клавиатуры строк
+﻿Console.Clear();
+Console.ForegroundColor = ConsoleColor.DarkGreen;
+Console.WriteLine("FinalVerificationTask");
+Console.ResetColor();
+Console.WriteLine("Добро пожаловать!");
+
+// метод для формирования массива из введенных с клавиатуры строк
 string[] ReadData()
 {
     Console.WriteLine("Задайте количество строк в массиве:");
@@ -63,10 +69,16 @@ void PrintIntArray(string[] printArray)
             i++;
         }
         // убираем запятую после последнего элемента
-        Console.WriteLine('\u0022' + printArray[i] + '\u0022'+"]");
+        Console.WriteLine('\u0022' + printArray[i] + '\u0022' + "]");
         Console.WriteLine();
     }
 }
 
+string[] inputData = ReadData();
+ModifiedArray(inputData);
+Console.WriteLine("Заданный массив: ");
+PrintIntArray(inputData);
+Console.WriteLine("Отсортированный массив: ");
+PrintIntArray(ModifiedArray(inputData));
 
 

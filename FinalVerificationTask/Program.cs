@@ -19,4 +19,27 @@ string[] ReadData()
     return inputArray;
 }
 
+// метод для модификации заданного массива согласно условиям задачи
+string[] ModifiedArray(string[] inputArray)
+{
+    string[] outArray = new string[inputArray.Length];
+    int j = 0;
+    // по условию, длина отсортированной строки 
+    // должна быть меньше или равна 3 символа
+    int maxStringSize = 3;
+    for (int i = 0; i < inputArray.Length; i++)
+    {
+        // Условие ограничивающее длинну строки в модифицированном массиве
+        // и исключающее из него пустые строки
+        if ((inputArray[i].Length <= maxStringSize) && (inputArray[i].Length != 0))
+        {
+            outArray[j] = inputArray[i];
+            j++;
+        }
+    }
+    // изменяем длинну модифицированного массива
+    Array.Resize(ref outArray, j);
+    return outArray;
+}
+
 
